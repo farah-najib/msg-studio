@@ -1,75 +1,77 @@
-# React + TypeScript + Vite
+# MsgStudio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web-based message composition tool that helps users write better, more structured WhatsApp messages.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Template-based composition** - Multiple pre-designed message templates to choose from
+- **Bilingual support** - English and Arabic language toggle (right-to-left support)
+- **Rich form builder** - Dynamic form fields with emoji picker integration
+- **Real-time preview** - View formatted messages as you compose them
+- **Customization options** - Toggle borders and emojis in message formatting
+- **Professional UI** - Clean, modern interface built with React, TypeScript, and Tailwind CSS
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- **React 19** - UI framework
+- **TypeScript** - Type safety
+- **Vite** - Build tool with HMR
+- **Tailwind CSS** - Styling
+- **shadcn/ui** - Accessible component library
+- **Lucide React** - Icon library
 
-Note: This will impact Vite dev & build performances.
+## Getting Started
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Node.js (v18 or higher)
+- npm or yarn
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+The app will be available at `http://localhost:5173`
+
+### Build
+
+```bash
+npm run build
+```
+
+### Lint
+
+```bash
+npm run lint
+```
+
+## Project Structure
+
+```
+src/
+├── components/           # React components
+│   ├── ui/              # Reusable UI components
+│   ├── emoji-picker.tsx
+│   ├── form-composer.tsx
+│   ├── language-toggle.tsx
+│   ├── message-preview.tsx
+│   └── template-selector.tsx
+├── lib/                 # Utility functions
+│   ├── format-message.ts
+│   ├── translations.ts
+│   └── utils.ts
+├── App.tsx              # Main app component
+└── main.tsx             # Entry point
+```
+
+## License
+
+MIT
