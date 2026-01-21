@@ -13,7 +13,7 @@ import {
 } from '@/lib/translations'
 
 export default function HomePage() {
-  const [language, setLanguage] = useState<Language>('en')
+  const [language, setLanguage] = useState<Language>('ar')
 
 
   const [selectedTemplate, setSelectedTemplate] = useState<TemplateType | null>(
